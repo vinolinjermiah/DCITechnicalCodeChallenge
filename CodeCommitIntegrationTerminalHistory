@@ -1,0 +1,197 @@
+Last login: Sun May 21 16:02:44 on ttys000
+(base) vinolin@192 ~ % ls
+Applications			application.py
+Desktop				application.zip
+Documents			aws-elastic-beanstalk-cli-setup
+Downloads			eb-flask
+Library				eb-flask 2
+ML				eb-flask 3
+Movies				eb-flask 4
+Music				file1.ipynb
+Pictures			my-elastic-beanstalk-app
+Public				newrepository
+PycharmProjects			opt
+Untitled.ipynb			requirements.txt
+__pycache__			seaborn-data
+(base) vinolin@192 ~ % cd eb-flask
+(base) vinolin@192 eb-flask % source virt/bin/activate
+(virt) (base) vinolin@192 eb-flask % ls
+application.py		requirements.txt	virt
+(virt) (base) vinolin@192 eb-flask % vi application py
+2 files to edit
+(virt) (base) vinolin@192 eb-flask % vi application.py
+(virt) (base) vinolin@192 eb-flask % eb create flask-env
+Creating application version archive "app-230521_165733188273".
+Uploading flask-tutorial/app-230521_165733188273.zip to S3. This may take a while.
+Upload Complete.
+Environment details for: flask-env
+  Application name: flask-tutorial
+  Region: us-east-2
+  Deployed Version: app-230521_165733188273
+  Environment ID: e-mfndsaum2b
+  Platform: arn:aws:elasticbeanstalk:us-east-2::platform/Python 3.7 running on 64bit Amazon Linux 2/3.5.2
+  Tier: WebServer-Standard-1.0
+  CNAME: UNKNOWN
+  Updated: 2023-05-21 11:27:40.119000+00:00
+Printing Status:
+2023-05-21 11:27:38    INFO    createEnvironment is starting.
+2023-05-21 11:27:40    INFO    Using elasticbeanstalk-us-east-2-186617566474 as Amazon S3 storage bucket for environment data.
+2023-05-21 11:27:59    INFO    Created security group named: sg-06a7d1ddac9d1ceb6
+2023-05-21 11:28:15    INFO    Created security group named: awseb-e-mfndsaum2b-stack-AWSEBSecurityGroup-U5TO16IHWS29
+2023-05-21 11:28:15    INFO    Created target group named: arn:aws:elasticloadbalancing:us-east-2:186617566474:targetgroup/awseb-AWSEB-W972EJQHNU8X/5341a0a978f3fe65
+2023-05-21 11:28:15    INFO    Created Auto Scaling launch configuration named: awseb-e-mfndsaum2b-stack-AWSEBAutoScalingLaunchConfiguration-tUDOVkpSaKga
+2023-05-21 11:28:30    INFO    Created Auto Scaling group named: awseb-e-mfndsaum2b-stack-AWSEBAutoScalingGroup-110JN8EJBWRGH
+2023-05-21 11:28:30    INFO    Waiting for EC2 instances to launch. This may take a few minutes.
+2023-05-21 11:28:45    INFO    Created Auto Scaling group policy named: arn:aws:autoscaling:us-east-2:186617566474:scalingPolicy:03896c31-e38e-4337-ac8e-0d5e9af3e12e:autoScalingGroupName/awseb-e-mfndsaum2b-stack-AWSEBAutoScalingGroup-110JN8EJBWRGH:policyName/awseb-e-mfndsaum2b-stack-AWSEBAutoScalingScaleDownPolicy-CS5tNGG0sBNF
+2023-05-21 11:28:45    INFO    Created Auto Scaling group policy named: arn:aws:autoscaling:us-east-2:186617566474:scalingPolicy:649d71cd-ee67-40e8-96dd-1e876db8e946:autoScalingGroupName/awseb-e-mfndsaum2b-stack-AWSEBAutoScalingGroup-110JN8EJBWRGH:policyName/awseb-e-mfndsaum2b-stack-AWSEBAutoScalingScaleUpPolicy-sY6FxEvQlvXJ
+2023-05-21 11:28:45    INFO    Created CloudWatch alarm named: awseb-e-mfndsaum2b-stack-AWSEBCloudwatchAlarmLow-1P2A20SHPINBY
+2023-05-21 11:28:45    INFO    Created CloudWatch alarm named: awseb-e-mfndsaum2b-stack-AWSEBCloudwatchAlarmHigh-ZHCBJP5NL0YI
+2023-05-21 11:30:04    INFO    Created load balancer named: arn:aws:elasticloadbalancing:us-east-2:186617566474:loadbalancer/app/awseb-AWSEB-NDBDYUKMG9E7/db6205619bf99dfc
+2023-05-21 11:30:04    INFO    Created Load Balancer listener named: arn:aws:elasticloadbalancing:us-east-2:186617566474:listener/app/awseb-AWSEB-NDBDYUKMG9E7/db6205619bf99dfc/d717dce82a8ecc05
+2023-05-21 11:30:11    INFO    Instance deployment successfully generated a 'Procfile'.
+2023-05-21 11:30:12    INFO    Instance deployment completed successfully.
+2023-05-21 11:30:27    INFO    Application available at flask-env.eba-msju8sxs.us-east-2.elasticbeanstalk.com.
+2023-05-21 11:30:28    INFO    Successfully launched environment: flask-env
+                                
+(virt) (base) vinolin@192 eb-flask % 
+(virt) (base) vinolin@192 eb-flask % git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /Users/vinolin/eb-flask/.git/
+(virt) (base) vinolin@192 eb-flask % git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.ebignore
+	.gitignore
+	application
+	application.py
+	requirements.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+(virt) (base) vinolin@192 eb-flask % rm application
+(virt) (base) vinolin@192 eb-flask % la
+zsh: command not found: la
+(virt) (base) vinolin@192 eb-flask % ls
+application.py		requirements.txt	virt
+(virt) (base) vinolin@192 eb-flask % git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.ebignore
+	.gitignore
+	application.py
+	requirements.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+(virt) (base) vinolin@192 eb-flask % git add .
+(virt) (base) vinolin@192 eb-flask % git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .ebignore
+	new file:   .gitignore
+	new file:   application.py
+	new file:   requirements.txt
+
+(virt) (base) vinolin@192 eb-flask % git commit -m "first commit"
+[master (root-commit) 0505219] first commit
+ Committer: Vinolin <vinolin@192.168.0.153>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 4 files changed, 44 insertions(+)
+ create mode 100644 .ebignore
+ create mode 100644 .gitignore
+ create mode 100644 application.py
+ create mode 100644 requirements.txt
+(virt) (base) vinolin@192 eb-flask % git remote add origin https://github.com/vinolinjermiah/CI-CD-challenge.git
+(virt) (base) vinolin@192 eb-flask % git branch -M main
+(virt) (base) vinolin@192 eb-flask % git push -u origin main
+Username for 'https://github.com': vinolinjermiah08@gmail.com
+Password for 'https://vinolinjermiah08@gmail.com@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/vinolinjermiah/CI-CD-challenge.git/'
+(virt) (base) vinolin@192 eb-flask % https://git-codecommit.us-east-2.amazonaws.com/v1/repos/CICDchallenge
+zsh: no such file or directory: https://git-codecommit.us-east-2.amazonaws.com/v1/repos/CICDchallenge
+(virt) (base) vinolin@192 eb-flask % git status
+On branch main
+nothing to commit, working tree clean
+(virt) (base) vinolin@192 eb-flask % git remote -v
+origin	https://github.com/vinolinjermiah/CI-CD-challenge.git (fetch)
+origin	https://github.com/vinolinjermiah/CI-CD-challenge.git (push)
+(virt) (base) vinolin@192 eb-flask % git remote set-url origin git@github.com:vinolinjermiah08@gmail.com/CI-CD-challenge.git
+(virt) (base) vinolin@192 eb-flask % git push -u origin main
+The authenticity of host 'github.com (20.207.73.82)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+(virt) (base) vinolin@192 eb-flask % git push -u origin main
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+(virt) (base) vinolin@192 eb-flask % git push               
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+(virt) (base) vinolin@192 eb-flask % git remote add origin https://github.com/vinolinjermiah/CI-CD-challenge.git
+error: remote origin already exists.
+(virt) (base) vinolin@192 eb-flask % git branch -M main
+(virt) (base) vinolin@192 eb-flask % git push -u origin main
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+(virt) (base) vinolin@192 eb-flask % git init
+Reinitialized existing Git repository in /Users/vinolin/eb-flask/.git/
+(virt) (base) vinolin@192 eb-flask % git status
+On branch main
+nothing to commit, working tree clean
+(virt) (base) vinolin@192 eb-flask % git push -u origin main
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+(virt) (base) vinolin@192 eb-flask % 
